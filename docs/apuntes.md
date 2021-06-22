@@ -20,3 +20,18 @@ En resumen ```<router-view />``` es el componente que permite la navegación del
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   }
 ````
+
+
+### Nota sobre el v-for
+Cada vez que usamos un v-for necesitamos
+agregar un atributo :key.Esto nos permite mantener el seguimiento
+de que elemento es cual para cuando se necesite reordenar
+o reusar dichos elementos.
+
+### Atributo scoped
+Sirve para indicar que aquel elemento, que algo por ejemplo los estilos, son solo validos para dicho archivo, mas no lo demas.
+
+
+
+### Tips
+ - @ es un alias para /src
