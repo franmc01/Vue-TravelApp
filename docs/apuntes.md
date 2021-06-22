@@ -1,14 +1,17 @@
 ## router-view
-Es un componente funcioanal que  renderiza el componente
+- Es un componente funcioanal que  renderiza el componente
 correspondiente a la ruta dada. Dado que se estamos creado una SPA ```<router-view />``` tiene como función ayudarnos a cambiar nuestras vistas. Básicamente, ```<router-view />``` siempre
 renderiza el contenido de la página activa. Esto quiere decir que cuando un usuario visita la página de inicio, ```<router-view />``` renderizará el contenido
 de nuestra página de inicio y asi con cada una de las paginas.
 
-En resumen ```<router-view />``` es el componente que permite la navegación del usuario en una aplicación con soporte para rutas.
+- En resumen ```<router-view />``` es el componente que permite la navegación del usuario en una aplicación con soporte para rutas.
 
 
 
 ## División de código de webpack
+ - Usando la caracteristica de división de código de Webpack, podemos dividir nuestro bundle
+en muchos archivos pequeños,llamados chunks o bundles. (Esto es utilizado cuando queremos aplicar lazy loading en Vue). Una de las ventajas es que lazy loading permite dividir nuestro codigo y controlar que nuestro bundle solo cargue lo que se está solicitando, la división de código hace a nuestra
+aplicación mucho más rápida,
 ````
   {
     path: "/about",
