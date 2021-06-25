@@ -38,3 +38,5 @@ Sirve para indicar que aquel elemento, que algo por ejemplo los estilos, son sol
 
 ### Tips
  - @ es un alias para /src
+ -  Los nombres de componentes deben ser de múltiples palabras para que no tengan conflictos con elementos existentes o futuros de HTML,los cuales son todos de una sola palabra. Para componentes de una única instancia es altamente recomendable de acuerdo a la guía de estilo oficial llamar a dichos componentes usando The, por ejemplo, 'The Navigation'.
+ -  Si queremos cambiar la clase active por defecto que agrega la etiqueta router link a los enlaces activos, podemos ir al router y en la seccion de scripts agregar la propiedad ```linkExactActiveClass: "my-custom-active-class",``` y entre comillas el nombre de la clase.
