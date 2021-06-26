@@ -22,7 +22,7 @@ export default {
   computed: {
     destination() {
       return store.destinations.find(
-        (destination) => destination.id === this.destinationId
+        (destination) => destination.id == this.destinationId
       );
     },
   },

@@ -40,7 +40,11 @@ Sirve para indicar que aquel elemento, que algo por ejemplo los estilos, son sol
  - @ es un alias para /src
  -  Los nombres de componentes deben ser de múltiples palabras para que no tengan conflictos con elementos existentes o futuros de HTML,los cuales son todos de una sola palabra. Para componentes de una única instancia es altamente recomendable de acuerdo a la guía de estilo oficial llamar a dichos componentes usando The, por ejemplo, 'The Navigation'.
  -  Si queremos cambiar la clase active por defecto que agrega la etiqueta router link a los enlaces activos, podemos ir al router y en la seccion de scripts agregar la propiedad ```linkExactActiveClass: "my-custom-active-class",``` y entre comillas el nombre de la clase.
- -  Las propiedades computadas nos
-permiten definir una propiedad que es usada igual que los datos pero que
-también puede tener lógica personalizada que es cacheada
-en base a sus dependencias.
+ -  Las propiedades computadas nos permiten definir una propiedad que es usada igual que los datos pero que también puede tener lógica personalizada que es cacheada en base a sus dependencias.
+
+
+### Importante
+- Vue Router
+no observa ningún cambio si el mismo componente está siendo usado. En español seria que si tenemos un componente que va renderizar la informacion de n usuarios por ejemplo en base a la url, vue router no actualizará la info del componente de manera automatica si se cambia la ruta por ejemplo de usuario 1 a usuario 2; para cambiar este comportamiento debemos hacer lo siguiente: 
+``` <router-view :key="this.route.path" /> ```
+Al hacer esto cualquier cambio a la ruta ejecutará una recarga del componente junto con los nuevos datos.

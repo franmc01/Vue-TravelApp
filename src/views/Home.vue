@@ -47,4 +47,14 @@ img {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+a {
+  color: #3c8a83;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover,
+a:visited {
+  text-decoration: underline;
+}
 </style>
