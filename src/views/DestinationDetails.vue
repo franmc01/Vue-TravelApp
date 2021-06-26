@@ -1,14 +1,34 @@
 <template>
-  <section class="destinations">
-    <h1>{{ destination.name }}</h1>
-    <div class="destination-details">
-      <img
-        :src="require(`@/assets/${destination.image}`)"
-        :alt="destination.name"
-      />
-      <p>{{ destination.description }}</p>
-    </div>
-  </section>
+  <div>
+    <section class="destinations">
+      <h1>{{ destination.name }}</h1>
+      <div class="destination-details">
+        <img
+          :src="require(`@/assets/${destination.image}`)"
+          :alt="destination.name"
+        />
+        <p>{{ destination.description }}</p>
+      </div>
+    </section>
+    <section>
+      <h2>Top experiencies in {{ destination.name }}</h2>
+      <div class="cards">
+        <div
+          class="card"
+          v-for="experiencie in destination.experiences"
+          :key="experiencie.slug"
+        >
+          <img
+            :src="require(`@/assets/${experiencie.image}`)"
+            :alt="experiencie.name"
+          />
+          <span class="card__text">
+            {{ experiencie.name }}
+          </span>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -20,7 +40,7 @@ export default {
   props: {
     slug: {
       type: String,
-      required: true 
+      required: true,
     },
   },
   computed: {
@@ -35,8 +55,7 @@ export default {
 
 
 <style scoped>
-img {
-  min-width: 400px;
+.destinations img {
   max-width: 600px;
   height: auto;
   width: 100%;
@@ -47,8 +66,29 @@ img {
   justify-content: space-between;
 }
 p {
-  margin: 0 40px;
-  font-size: 20px;
+  margin: 0 25px;
+  font-size: 18px;
   text-align: left;
+}
+.cards {
+  display: flex;
+}
+.cards img {
+  max-height: 200px;
+}
+
+.card {
+  padding: 0 20px;
+  position: relative;
+}
+.card__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
 }
 </style>
