@@ -3,11 +3,11 @@
     <section class="destinations">
       <h1>{{ destination.name }}</h1>
       <div class="destination-details">
-        <img
-          :src="require(`@/assets/${destination.image}`)"
-          :alt="destination.name"
-        />
-        <p>{{ destination.description }}</p>
+          <img
+            :src="require(`@/assets/${destination.image}`)"
+            :alt="destination.name"
+          />
+          <p>{{ destination.description }}</p>
       </div>
     </section>
     <section>
@@ -18,6 +18,7 @@
           v-for="experiencie in destination.experiences"
           :key="experiencie.slug"
         >
+        <router-link :to="{ name: 'experienceDetails', params: { experienceSlug: experiencie.slug } }">
           <img
             :src="require(`@/assets/${experiencie.image}`)"
             :alt="experiencie.name"
@@ -25,9 +26,11 @@
           <span class="card__text">
             {{ experiencie.name }}
           </span>
+        </router-link>
         </div>
       </div>
     </section>
+      <router-view :key="this.$route.path"></router-view>
   </div>
 </template>
 
