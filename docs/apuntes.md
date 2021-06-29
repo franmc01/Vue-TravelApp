@@ -26,6 +26,10 @@
 ### Atributo scoped
 - Sirve para indicar que aquel elemento, que algo por ejemplo los estilos, son solo validos para dicho archivo, mas no lo demas.
 
+## Navigation Guards
+- Como su nombre indica, estos navigation guards proporcionados por vue-router se utilizan principalmente para proteger las navegaciones, ya sea redirigiéndolas o cancelandolas. Hay varias formas de hacerlo, puede ser globalmente, por ruta o en el componente.
+- Nos permiten ejecutar código antes y después de que la navegación suceda.
+
 
 
 ### Tips
