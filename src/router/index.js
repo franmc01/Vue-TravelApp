@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: Home,
     props: true,
   },
@@ -17,7 +17,8 @@ const routes = [
     props: true,
     component: () =>
       import(
-        /*webpackChunkName: "destination-details"*/ "../views/DestinationDetails.vue"
+        /*webpackChunkName: "destination-details"*/
+        "../views/DestinationDetails.vue"
       ),
     children: [
       {
@@ -26,10 +27,20 @@ const routes = [
         props: true,
         component: () =>
           import(
-            /*webpackChunkName: "experienceDetails"*/ "../views/ExperienceDetail.vue"
+            /*webpackChunkName: "experienceDetails"*/
+            "../views/ExperienceDetail.vue"
           )
       }
     ]
+  },
+  {
+    path: '*',
+    name: 'notFound',
+    component: () =>
+      import(
+        /*webpackChunkName: "NotFound"*/
+        "../views/NotFound.vue"
+      )
   },
 ];
 
