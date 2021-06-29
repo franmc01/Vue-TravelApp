@@ -1,5 +1,6 @@
 <template>
   <div>
+  <go-back-button></go-back-button>
     <section class="destinations">
       <h1>{{ destination.name }}</h1>
       <div class="destination-details">
@@ -36,6 +37,7 @@
 
 <script>
 import store from "@/store.js";
+import GoBackButton from '../components/GoBackButton.vue';
 export default {
   data() {
     return {};
@@ -45,6 +47,9 @@ export default {
       type: String,
       required: true,
     },
+  },
+  components: {
+    GoBackButton,
   },
   computed: {
     destination() {
