@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import store from "@/store.js";
+import store from "../store";
 export default {
   name: "TheNavigation",
   data() {
@@ -46,8 +46,7 @@ export default {
   font-weight: bold;
   color: #2c3e50;
   padding: 0 10px;
-    text-decoration: none;
-  font-weight: bold;
+  text-decoration: none;
 }
 
 /*

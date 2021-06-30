@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import TheNavigation from "@/components/TheNavigation.vue";
+import TheNavigation from "./components/TheNavigation";
 export default {
   components: {
     TheNavigation,
@@ -35,7 +35,7 @@ export default {
   transform: translateX(-30%);
 }
 .moveUp-enter-active {
-  animation: fadeIn .5s ease-in;
+  animation: fadeIn 0.5s ease-in;
 }
 @keyframes fadeIn {
   0% {
