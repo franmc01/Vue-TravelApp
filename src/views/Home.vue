@@ -8,8 +8,8 @@
             name: 'destination-details',
             params: { slug: destination.slug },
           }"
-          >{{ destination.name }}</router-link
-        >
+          >{{ destination.name }}
+        </router-link>
         <figure>
           <router-link
             :to="{
@@ -32,7 +32,8 @@
 
 <script>
 // @ is an alias to /src
-import store from "@/store.js";
+import store from "../store.js";
+
 export default {
   name: "Home",
   components: {},
@@ -49,9 +50,11 @@ export default {
   max-width: 1400px;
   margin: 0 auto;
 }
+
 img {
   max-width: 200px;
 }
+
 .destinations {
   display: flex;
   justify-content: space-between;
@@ -63,6 +66,7 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
+
 a:hover,
 a:visited {
   text-decoration: underline;

@@ -1,7 +1,7 @@
-import store from '@/store.js';
-import Home from "@/views/Home";
+import Home from "/views/Home";
 import Vue from "vue";
 import VueRouter from "vue-router";
+import store from "../store";
 
 Vue.use(VueRouter);
 
@@ -26,16 +26,18 @@ const routes = [
 
       //      next('/') o next({ path: '/' }) : redirigir a una ubicación diferente. La navegación actual se cancelará y se iniciará una nueva. Puede pasar cualquier objeto a la ubicación next, que le permite especificar opciones como replace: true, name: 'home'y cualquier opción que se utiliza en router-link's toprop orouter.push
 
-      //    next(error): (2.4.0+) si el argumento pasado nextes una instancia de Error, la navegación se cancelará y el error se pasará a las devoluciones de llamada registradas mediante router.onError().
+      //    next(error): (2.4.0+) si el argumento pasado next es una instancia de Error, la navegación se cancelará y el error se pasará a las devoluciones de llamada registradas mediante router.onError().
 
       // IMPORTANTE: Hay que asegurarse de que la next función se llame exactamente una vez en cualquier paso a través de la protección de navegación. Puede aparecer más de una vez, pero solo si las rutas lógicas no se superponen, de lo contrario el gancho nunca se resolverá ni producirá errores.
-      const existe = store.destinations.find(destino => destino.slug === to.params.slug)
+      const existe = store.destinations.find(
+        (destino) => destino.slug === to.params.slug
+      );
 
       if (existe) {
-        next()
+        next();
       } else {
         // no podemos ni debemos reemplazar la vista actual con una ruta nombrada que tenga un asterisco como path. Lo que tenemos que hacer es reemplazarlo con una ruta explicita, para aquello podriamos usar alias a las rutas
-        next({ name: 'notFound' })
+        next({ name: "notFound" });
       }
     },
     component: () =>
@@ -45,26 +47,26 @@ const routes = [
       ),
     children: [
       {
-        path: ':experienceSlug',
-        name: 'experienceDetails',
+        path: ":experienceSlug",
+        name: "experienceDetails",
         props: true,
         component: () =>
           import(
             /*webpackChunkName: "experienceDetails"*/
             "../views/ExperienceDetail.vue"
-          )
-      }
-    ]
+          ),
+      },
+    ],
   },
   {
-    path: '/404',
-    alias: '*',
-    name: 'notFound',
+    path: "/404",
+    alias: "*",
+    name: "notFound",
     component: () =>
       import(
         /*webpackChunkName: "NotFound"*/
         "../views/NotFound.vue"
-      )
+      ),
   },
 ];
 

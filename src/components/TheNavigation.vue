@@ -2,7 +2,7 @@
   <nav id="nav">
     <ul class="nav-links">
       <li class="links">
-        <router-link to="/"> Home </router-link>
+        <router-link to="/"> Home</router-link>
       </li>
       <li
         v-for="destination in destinations"
@@ -24,13 +24,14 @@
 
 <script>
 import store from "../store";
+
 export default {
   name: "TheNavigation",
   data() {
     return {
-      destinations: store.destinations,
+      destinations: store.destinations
     };
-  },
+  }
 };
 </script>
 
@@ -62,10 +63,12 @@ export default {
 .nav-links {
   display: flex;
 }
+
 .links {
   padding-right: 20px;
   list-style: none;
 }
+
 .links:hover {
   text-decoration: underline;
 }
