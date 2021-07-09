@@ -38,9 +38,12 @@ export default {
 <style scoped>
 #nav {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 30px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid grey;
+  z-index: 1;
 }
 
 #nav a {

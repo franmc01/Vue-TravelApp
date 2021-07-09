@@ -32,7 +32,7 @@
 
 <script>
 // @ is an alias to /src
-import store from "../store.js";
+import store from "../store";
 
 export default {
   name: "Home",

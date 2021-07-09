@@ -11,9 +11,8 @@
         <p>{{ destination.description }}</p>
       </div>
     </section>
-    <section>
-      <h2>Top experiencies in {{ destination.name }}</h2>
-      <div class="cards">
+    <section class="experiences">
+      <div class="cards" id="experience">
         <div
           class="card"
           v-for="experiencie in destination.experiences"
@@ -23,6 +22,7 @@
             :to="{
               name: 'experienceDetails',
               params: { experienceSlug: experiencie.slug },
+              hash: '#experience',
             }"
           >
             <img
@@ -55,15 +55,15 @@ export default {
     },
   },
   components: {
-    GoBackButton,
+    GoBackButton
   },
   computed: {
     destination() {
       return store.destinations.find(
         (destination) => destination.slug === this.slug
       );
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -84,6 +84,10 @@ p {
   margin: 0 25px;
   font-size: 18px;
   text-align: left;
+}
+
+.experiences {
+  padding: 40px 0;
 }
 
 .cards {
